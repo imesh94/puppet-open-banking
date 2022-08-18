@@ -203,6 +203,7 @@ validator = "com.wso2.finance.open.banking.identity.extensions.response.type.val
 [[oauth.custom_response_type]]
 name = "code id_token"
 class = "com.wso2.finance.open.banking.identity.extensions.response.type.handlers.OBHybridResponseTypeHandler"
+validator = "com.wso2.finance.open.banking.identity.extensions.response.type.validators.OBHybridResponseValidator"
 
 [oauth.grant_type]
 authorization_code.enable = true
@@ -221,6 +222,7 @@ retrieve_uma_permission_info_through_introspection = "true"
 extensions.id_token_builder = "com.wso2.finance.open.banking.idtoken.builder.OBIDTokenBuilder"
 id_token.issuer = "https://<%= @apim_hostname %>:8243/token"
 extensions.request_object_validator = "com.wso2.finance.open.banking.request.object.validator.OBRequestObjectValidatorImpl"
+extensions.oauth_authz_request_class = "com.wso2.finance.open.banking.identity.extensions.oauth.authz.request.OBOAuthAuthzRequest"
 
 [identity_mgt.user_self_registration]
 allow_self_registration = true
